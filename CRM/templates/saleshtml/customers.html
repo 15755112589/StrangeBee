@@ -1,0 +1,135 @@
+{% extends 'starter.html' %}
+
+{% block pageheader %}
+    <h1>
+{#        {% if tag == '1' %}#}
+{#            公户信息#}
+{#        {% else %}#}
+{#            我的客户信息#}
+{#        {% endif %}#}
+
+    {% load mytags %}
+    {% reverse_url request %}
+    </h1>
+
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'add_customers' %}" class="btn btn-primary">
+        添加客户
+    </a>
+
+    <div class="form-inline">
+        <form action="" class="pull-right">
+            <div class="form-group pull-right">
+                <select name="search_field" id="search_field" class="form-control">
+                    <option value="qq__contains">qq</option>
+                    <option value="name__contains">姓名</option>
+                    <option value="status__contains">状态</option>
+                </select><input type="text" class="form-control" name="kw" id="key_word" placeholder="请输入关键字"
+                                autocomplete="off">
+                <button type="submit" class="btn btn-primary">搜索</button>
+            </div>
+        </form>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group pull-left">
+                <select name="action" id="action" class="form-control">
+                    {% if tag == '1' %}
+                        <option value="reverse_gs">公户转私户</option>
+                    {% else %}
+                        <option value="reverse_sg">私户转公户</option>
+                    {% endif %}
+                </select>
+                <button class="btn btn-warning">go</button>
+            </div>
+
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="select_all"> 选择</th>
+                    <th>序号</th>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>qq</th>
+                    <th>报名状态</th>
+                    <th>销售</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for foo in customers_obj %}
+                    <tr>
+                        <td><input type="checkbox" name="cids" value="{{ foo.pk }}"></td>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ foo.id }}</td>
+                        <td>{{ foo.name }}</td>
+                        <td>{{ foo.get_sex_display }}</td>
+                        <td>{{ foo.qq }}</td>
+                        <td>{{ foo.status_show }}</td>
+                        <td>{{ foo.consultant|default:'暂无' }}</td>
+                        <td>
+                            <a href="{% url 'edit_customers' foo.pk %}" class="fa fa-edit"></a>
+                            <a href="{% resole_url request 'edit_customers' foo.pk %}" class="fa fa-edit">编辑</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    {{ page_info.pager | safe }}
+                </ul>
+            </nav>
+        </form>
+
+
+    </div>
+
+
+    {#    <table class="table table-hover table-striped table-bordered">#}
+    {#        <thead>#}
+    {#        <tr>#}
+    {#            <th><input type="checkbox" id="select_all"> 选择</th>#}
+    {#            <th>序号</th>#}
+    {#            <th>编号</th>#}
+    {#            <th>姓名</th>#}
+    {#            <th>性别</th>#}
+    {#            <th>qq</th>#}
+    {#            <th>报名状态</th>#}
+    {#            <th>销售</th>#}
+    {#            <th>操作</th>#}
+    {#        </tr>#}
+    {#        </thead>#}
+    {#        <tbody>#}
+    {#        {% for foo in customers_obj %}#}
+    {#            <tr>#}
+    {#                <td><input type="checkbox" name="cids"></td>#}
+    {#                <td>{{ forloop.counter }}</td>#}
+    {#                <td>{{ foo.id }}</td>#}
+    {#                <td>{{ foo.name }}</td>#}
+    {#                <td>{{ foo.get_sex_display }}</td>#}
+    {#                <td>{{ foo.qq }}</td>#}
+    {#                <td>{{ foo.status_show }}</td>#}
+    {#                <td>{{ foo.consultant|default:'暂无' }}</td>#}
+    {#                <td>#}
+    {#                    <a href="{% url 'edit_customers' foo.pk %}" class="fa fa-edit"></a>#}
+    {#                </td>#}
+    {#            </tr>#}
+    {#        {% endfor %}#}
+    {##}
+    {##}
+    {#        </tbody>#}
+    {#    </table>#}
+    {##}
+    {#    <nav aria-label="Page navigation">#}
+    {#        <ul class="pagination">#}
+    {#            {{ page_info.pager | safe }}#}
+    {#        </ul>#}
+    {#    </nav>#}
+
+{% endblock content %}

@@ -1,10 +1,5 @@
-1111111
-222222
-33333345
-4444444
-555555
-this is a test
-11
-adddduoduodudoddo
+This is a self think project for myself
+
+
 
 
