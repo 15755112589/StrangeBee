@@ -105,13 +105,15 @@ def add_edit_customers(request, cid=None):
         return render(request, 'saleshtml/edit_customers.html', {'customer_form': customer_form, 'label': label})
 
     else:
-        customer_form = CustomerForm(request.POST, instance=customer_obj)
         next_url = request.GET.get('next')
+        customer_form = CustomerForm(request.POST, instance=customer_obj)
         if customer_form.is_valid():
             customer_form.save()
             # return redirect('customers')
-
-            return redirect(next_url)
+            if next_url:
+                return redirect(next_url)
+            else:
+                return redirect('customers')
         else:
             return render(request, 'saleshtml/edit_customers.html', {'customer_form': customer_form, 'label': label})
 

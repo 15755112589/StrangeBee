@@ -88,6 +88,7 @@ DATABASES = {
         'PORT': 3306,
         'USER': 'root',
         'PASSWORD': 'wuyujuan662',
+        # 'PASSWORD': '123456',
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
