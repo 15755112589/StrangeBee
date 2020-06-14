@@ -2,6 +2,7 @@
 # date:2020/6/10 1:04
 
 from django.db.models import Q
+from django.db import transaction
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
 from django.views import View
@@ -80,14 +81,18 @@ class CustomerView(View):
 
     # 公转私
     def reverse_gs(self, request, cids):
-        customers = models.Customer.objects.filter(pk__in=cids, consultant__isnull=True)
+
+        with transaction.atomic():
+            customers = models.Customer.objects.filter(pk__in=cids, consultant__isnull=True)
         if customers.count() != len(cids):
             return HttpResponse('公转私失败，请刷新页面重新尝试！！')
         customers.update(consultant_id=request.session.get('user_id'))
 
     # 私转公
-    def reverse_sg(self, request, customers):
-
+    def reverse_sg(self, request, cids):
+        customers = models.Customer.objects.filter(pk__in=cids, consultant__isnull=False)
+        if customers.count() != len(cids):
+            return HttpResponse('私转公失败，请刷新页面重新尝试！！')
         customers.update(consultant=None)
 
 
