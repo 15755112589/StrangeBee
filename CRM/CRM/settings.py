@@ -86,8 +86,8 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
-        # 'PASSWORD': 'wuyujuan662',   # 线上数据库密码
-        'PASSWORD': '123456',          # 本地数据库密码
+        'PASSWORD': 'wuyujuan662',   # 线上数据库密码
+        # 'PASSWORD': '123456',          # 本地数据库密码
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
