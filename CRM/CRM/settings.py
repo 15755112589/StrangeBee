@@ -24,7 +24,7 @@ SECRET_KEY = '%ryqi(t!bnx_uzu$ygq!pvw72un*u&q$295*80tl48s$&jo=8f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['strangebee.cn', '127.0.0.1', '59.110.152.148', 'localhost', ]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
