@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d720046-7bbc-4b63-aa18-4313793c6b7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/statics/strangebee.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales/views/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sales/views/customer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/saleshtml/add_customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/saleshtml/add_customers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/saleshtml/edit_customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/saleshtml/edit_customers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/saleshtml/customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/saleshtml/customers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/starter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/starter.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales/views/customer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+            <state relative-caret-position="256">
+              <caret line="127" column="48" lean-forward="true" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
               <folding>
                 <element signature="e#45#75#0" expanded="true" />
               </folding>
@@ -64,41 +65,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/saleshtml/consultrecord.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/saleshtml/customers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_customers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/saleshtml/edit_customers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sales/templatetags/mytags.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#46#77#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1534">
+              <caret line="73" column="60" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -107,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/sales/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#47#79#0" expanded="true" />
               </folding>
@@ -115,11 +95,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sales/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2354">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CRM/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="90" column="24" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+            <state relative-caret-position="-777">
+              <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/starter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -170,24 +171,24 @@
         <option value="$PROJECT_DIR$/sales/myforms.py" />
         <option value="$PROJECT_DIR$/CRM/views/auth.py" />
         <option value="$PROJECT_DIR$/CRM/views/customer.py" />
-        <option value="$PROJECT_DIR$/templates/starter.html" />
         <option value="$PROJECT_DIR$/sales/admin.py" />
         <option value="$PROJECT_DIR$/CRM/urls.py" />
         <option value="$PROJECT_DIR$/templates/saleshtml/consultrecord.html" />
         <option value="$PROJECT_DIR$/sales/models.py" />
-        <option value="$PROJECT_DIR$/sales/urls.py" />
         <option value="$PROJECT_DIR$/templates/saleshtml/add_customers.html" />
         <option value="$PROJECT_DIR$/templates/saleshtml/edit_customers.html" />
-        <option value="$PROJECT_DIR$/templates/saleshtml/customers.html" />
         <option value="$PROJECT_DIR$/sales/templatetags/mytags.py" />
         <option value="$PROJECT_DIR$/sales/views/customer.py" />
+        <option value="$PROJECT_DIR$/templates/saleshtml/customers.html" />
         <option value="$PROJECT_DIR$/CRM/settings.py" />
+        <option value="$PROJECT_DIR$/templates/starter.html" />
+        <option value="$PROJECT_DIR$/sales/urls.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="18" />
-    <option name="y" value="30" />
+    <option name="x" value="92" />
+    <option name="y" value="9" />
     <option name="width" value="1299" />
     <option name="height" value="695" />
   </component>
@@ -217,8 +218,7 @@
             <path>
               <item name="CRM" type="b2602c69:ProjectViewProjectNode" />
               <item name="CRM" type="462c0819:PsiDirectoryNode" />
-              <item name="sales" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CRM" type="b2602c69:ProjectViewProjectNode" />
@@ -244,24 +244,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="E:/Django_projects/old_boy_python_stack__22-teaching_plan-master/teaching_plan/day74 课上笔记以及代码/代码/supercrm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/statics" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\strange_bee\CRM\statics" />
+      <recent name="E:\Django_projects\CRM\sales" />
+      <recent name="E:\Django_projects\CRM\templates\saleshtml" />
+      <recent name="E:\Django_projects\CRM\statics" />
+      <recent name="E:\Django_projects\CRM\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Django_projects\CRM\sales" />
       <recent name="E:\Django_projects\CRM\templates\sales1.html" />
       <recent name="E:\Django_projects\CRM\statics\dist" />
       <recent name="E:\Django_projects\CRM\statics" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Django_projects\CRM\sales" />
-      <recent name="E:\Django_projects\CRM\templates\saleshtml" />
-      <recent name="E:\Django_projects\CRM\statics" />
-      <recent name="E:\Django_projects\CRM\templates" />
-      <recent name="E:\Django_projects\CRM\statics\plugins\login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -421,7 +421,7 @@
       <workItem from="1591707976079" duration="10705000" />
       <workItem from="1591883277202" duration="5275000" />
       <workItem from="1591962514378" duration="3558000" />
-      <workItem from="1592113237406" duration="15354000" />
+      <workItem from="1592113237406" duration="20156000" />
     </task>
     <task id="LOCAL-00001" summary="modify mysql ip">
       <created>1592113423924</created>
@@ -486,21 +486,29 @@
       <option name="project" value="LOCAL" />
       <updated>1592122162485</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix add customer back error">
+      <created>1592136529482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592136529482</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131607000" />
+    <option name="totallyTimeSpent" value="136409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895614" visible="true" weight="0.120272316" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895614" visible="true" weight="0.115733735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50104386" side_tool="true" weight="0.13505311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924126" visible="true" weight="0.39182281" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924126" visible="true" weight="0.20102215" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39863715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -517,7 +525,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1354009" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.09984872" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +539,8 @@
     <MESSAGE value="add allow_host" />
     <MESSAGE value="add static_root" />
     <MESSAGE value="add allow_host is *" />
-    <option name="LAST_COMMIT_MESSAGE" value="add allow_host is *" />
+    <MESSAGE value="fix add customer back error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix add customer back error" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CRM$tests.coverage" NAME="tests Coverage Results" MODIFIED="1591423950606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sales" />
@@ -681,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/consultrecord.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sales/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -705,13 +707,6 @@
           <folding>
             <element signature="e#46#91#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/starter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5830">
-          <caret line="265" column="48" selection-start-line="265" selection-start-column="37" selection-end-line="265" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -740,16 +735,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,13 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/edit_customers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sales/myforms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -801,17 +779,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_customers.html">
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/edit_customers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="219">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/customers.html">
+    <entry file="file://$PROJECT_DIR$/CRM/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="-777">
+          <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/starter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_customers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -825,10 +817,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/customers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1534">
+          <caret line="73" column="60" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sales/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2354">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sales/views/customer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+        <state relative-caret-position="256">
+          <caret line="127" column="48" lean-forward="true" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
           <folding>
             <element signature="e#45#75#0" expanded="true" />
           </folding>
@@ -838,17 +847,17 @@
     <entry file="file://$PROJECT_DIR$/sales/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#47#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRM/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/consultrecord.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="90" column="24" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+        <state relative-caret-position="198">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
         </state>
       </provider>
     </entry>

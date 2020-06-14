@@ -109,7 +109,6 @@ def add_edit_customers(request, cid=None):
         customer_form = CustomerForm(request.POST, instance=customer_obj)
         if customer_form.is_valid():
             customer_form.save()
-            # return redirect('customers')
             if next_url:
                 return redirect(next_url)
             else:
