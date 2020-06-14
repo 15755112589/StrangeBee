@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^edit_customers/(\d+)/', customer.add_edit_customers, name='edit_customers'),
 
     # 跟进记录
-    url(r'^consult_record', customer.consult_record, name='consult_record'),
+    # url(r'^consult_record', customer.consult_record, name='consult_record'),
 
 
 ]
