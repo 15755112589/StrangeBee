@@ -1,6 +1,6 @@
 # __author = wulinjun
 # date:2020/6/10 1:04
-
+from django.conf import settings
 from django.db.models import Q
 from django.db import transaction
 from django.shortcuts import render, redirect, HttpResponse
@@ -8,7 +8,7 @@ from django.urls import reverse
 from django.views import View
 
 from sales import models
-from sales.myforms import CustomerForm
+from sales.myforms import (CustomerForm, ConsultRecordForm)
 from sales.utils.paging import PageInfo
 
 
@@ -66,7 +66,8 @@ class CustomerView(View):
         page_info = PageInfo(current_page=current_page, all_count=all_count, per_page=per_page, get_data=get_data,
                              base_url=request.path,
                              show_page=5)
-        return render(request, 'saleshtml/customers.html', {'customers_obj': customers_obj, 'page_info': page_info, 'tag': tag})
+        return render(request, 'saleshtml/customers.html',
+                      {'customers_obj': customers_obj, 'page_info': page_info, 'tag': tag})
 
     def post(self, request):
 
@@ -127,9 +128,96 @@ class ConsultRecord(View):
 
     def get(self, request):
 
-        # 当前登录用户的未删除的客户的跟进记录
-        consult_list = models.ConsultRecord.objects.filter(consultant=request.user_obj, delete_status=False)
+        cid = request.GET.get('cid')
 
-        return render(request, 'saleshtml/consultrecord.html', {'consult_list': consult_list})
+        if cid:
+            # 当前登录用户的未删除的客户的跟进记录
+            consult_list = models.ConsultRecord.objects.filter(consultant=request.user_obj, delete_status=False,
+                                                               customer_id=cid).order_by('-date')
+        else:
+            consult_list = models.ConsultRecord.objects.filter(consultant=request.user_obj,
+                                                               delete_status=False).order_by('-date')
+
+        # 分页和搜索
+        get_data = request.GET.copy()  # 获取get请求提交的数据
+
+        # 当前页
+        current_page = request.GET.get('page')  # 当前页码
+        kw = request.GET.get('kw')  # 查询关键字
+        search_field = request.GET.get('search_field')
+        if kw:
+            kw = kw.strip()
+            q_obj = Q()
+            q_obj.children.append((search_field, kw))
+            consult_list = consult_list.filter(q_obj)
+        else:
+            consult_list = consult_list
+
+        try:
+            current_page = int(current_page)
+
+        except Exception as e:
+            current_page = 1
+
+        # 每页显示的个数
+        per_page = 10
+
+        start_show = (current_page - 1) * per_page
+        end_show = current_page * per_page
+        # 每页显示的数据
+        consult_obj = consult_list.reverse()[start_show: end_show]
+        all_count = consult_list.count()
+        page_info = PageInfo(current_page=current_page, all_count=all_count, per_page=per_page, get_data=get_data,
+                             base_url=request.path,
+                             show_page=5)
+        return render(request, 'saleshtml/consultrecord.html',
+                      {'consult_list': consult_obj, 'page_info': page_info})
+
+    def post(self, request):
+        action = request.POST.get('action')
+        cids = request.POST.getlist('cids')
+        if hasattr(self, action):
+            consults = models.ConsultRecord.objects.filter(pk__in=cids)
+            # print(customers)
+            getattr(self, action)(request, consults)
+            return redirect(request.path)
+
+    # 公转私
+    def bulk_delete(self, request, consults):
+        consults.update(delete_status=True)
 
 
+class AddEditConsultView(View):
+
+    def get(self, request, cid=None):
+
+        """
+            添加客户和编辑客户
+            :param request:
+            :param cid:   客户记录id
+            :return:
+            """
+        label = '编辑跟进记录' if cid else '添加跟进记录'
+        consult_obj = models.ConsultRecord.objects.filter(pk=cid).first()
+
+        if request.method == 'GET':
+            consult_form = ConsultRecordForm(request, instance=consult_obj)
+            return render(request, 'saleshtml/add_edit_consult.html', {'consult_form': consult_form, 'label': label})
+
+    def post(self, request, cid=None):
+        consult_obj = models.ConsultRecord.objects.filter(pk=cid).first()
+        next_url = request.GET.get('next')
+        if not next_url:
+            next_url = reverse('consult_record')
+        consult_form = ConsultRecordForm(request, request.POST, instance=consult_obj)
+        if consult_form.is_valid():
+            consult_form.save()
+
+            return redirect(next_url)
+        else:
+            return render(request, 'saleshtml/add_edit_consult.html', {'consult_form': consult_form})
+
+
+def delete_consult_record(request, cid):
+    models.ConsultRecord.objects.filter(pk=cid).update(delete_status=True)
+    return redirect('consult_record')

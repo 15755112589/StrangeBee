@@ -5,11 +5,11 @@
 
     跟进记录展示
     </h1>
-
+{% load mytags %}
 {% endblock %}
 
 {% block content %}
-    <a href="{% url '' %}" class="btn btn-primary">
+    <a href="{% url 'add_consult_record' %}" class="btn btn-primary">
         添加跟进记录
     </a>
 
@@ -17,9 +17,7 @@
         <form action="" class="pull-right">
             <div class="form-group pull-right">
                 <select name="search_field" id="search_field" class="form-control">
-                    <option value="qq__contains">qq</option>
-                    <option value="name__contains">姓名</option>
-                    <option value="status__contains">状态</option>
+                    <option value="customer__name__contains">客户名称</option>
                 </select><input type="text" class="form-control" name="kw" id="key_word" placeholder="请输入关键字"
                                 autocomplete="off">
                 <button type="submit" class="btn btn-primary">搜索</button>
@@ -42,29 +40,28 @@
                 <tr>
                     <th><input type="checkbox" id="select_all"> 选择</th>
                     <th>序号</th>
-                    <th>编号</th>
-                    <th>姓名</th>
-                    <th>性别</th>
-                    <th>qq</th>
-                    <th>报名状态</th>
-                    <th>销售</th>
+                    <th>所咨询客户</th>
+                    <th>跟进内容</th>
+                    <th>跟进状态</th>
+                    <th>跟进人</th>
+                    <th>跟进日期</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for foo in customers_obj %}
+                {% for consult in consult_list %}
                     <tr>
-                        <td><input type="checkbox" name="cids" value="{{ foo.pk }}"></td>
+                        <td><input type="checkbox" name="cids" value="{{ consult.pk }}"></td>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ foo.id }}</td>
-                        <td>{{ foo.name }}</td>
-                        <td>{{ foo.get_sex_display }}</td>
-                        <td>{{ foo.qq }}</td>
-                        <td>{{ foo.status_show }}</td>
-                        <td>{{ foo.consultant|default:'暂无' }}</td>
+                        <td>{{ consult.customer.name }}</td>
+                        <td>{{ consult.note }}</td>
+                        <td>{{ consult.get_status_display }}</td>
+                        <td>{{ consult.consultant }}</td>
+                        <td>{{ consult.date|date:'Y-m-d H:i:s' }}</td>
                         <td>
-                            <a href="{% url 'edit_customers' foo.pk %}" class="fa fa-edit"></a>
-                            <a href="{% resole_url request 'edit_customers' foo.pk %}" class="fa fa-edit">编辑</a>
+{#                            <a href="{% resole_url request 'edit_customers' foo.pk %}" class="fa fa-edit">编辑</a>#}
+                            <a href="{% resole_url request 'edit_consult_record' consult.pk %}" class="fa fa-edit">编辑</a>
+                            <a href="{% url 'delete_consult_record' consult.pk %}" class="fa fa-remove">删除</a>
                         </td>
                     </tr>
                 {% endfor %}

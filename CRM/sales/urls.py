@@ -16,10 +16,9 @@ urlpatterns = [
     url(r'^register/', auth.register, name='register'),
     # 首页
     url(r'^home/', customer.home, name='home'),
-    #
-    # url(r'^customers/(\d+)', views.customers, name='customers'),
-    # url(r'^customers/', views.customers, name='customers'),
+    # 总客户信息页
     url(r'^customers/', customer.CustomerView.as_view(), name='customers'),
+    # 我的客户信息页
     url(r'^mycustomers/', customer.CustomerView.as_view(), name='mycustomers'),
 
     # 添加客户
@@ -30,8 +29,13 @@ urlpatterns = [
     url(r'^edit_customers/(\d+)/', customer.add_edit_customers, name='edit_customers'),
 
     # 跟进记录
-    # url(r'^consult_record', customer.consult_record, name='consult_record'),
-
+    url(r'^consult_record', customer.ConsultRecord.as_view(), name='consult_record'),
+    # 添加跟进记录
+    url(r'^add_consult_record', customer.AddEditConsultView.as_view(), name='add_consult_record'),
+    # 编辑跟进记录
+    url(r'^edit_consult_record/(\d+)/', customer.AddEditConsultView.as_view(), name='edit_consult_record'),
+    # 删除客户记录
+    url(r'^delete_consult_record/(\d+)', customer.delete_consult_record, name='delete_consult_record'),
 
 ]
 
