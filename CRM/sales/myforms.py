@@ -95,7 +95,6 @@ class RegisterForm(forms.Form):
 
 # 客户相关信息验证
 class CustomerForm(forms.ModelForm):
-
     class Meta:
         model = models.Customer
         fields = '__all__'
@@ -114,36 +113,17 @@ class CustomerForm(forms.ModelForm):
 
 
 class ConsultRecordForm(forms.ModelForm):
-
     class Meta:
         model = models.ConsultRecord
         fields = '__all__'
-        exclude = ['delete_status',]
+        exclude = ['delete_status', ]
 
-    # sex = forms.ChoiceField(
-    #     choices=(('1','男'),('2','女'))
-    # )
-
-    # customer = forms.ModelChoiceField(
-    #     queryset=models.Publish.objects.all()
-    # )
-    # customer = models.ModelChoiceField(
-    #     queryset = models.Customer.objects.all()
-    # )
-
-    def __init__(self,request,*args,**kwargs):
-        super().__init__(*args,**kwargs)
-        for field_name,field in self.fields.items():
-            print(field_name,field)
-            field.widget.attrs.update({'class':'form-control'})
+    def __init__(self, request, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            print(field_name, field)
+            field.widget.attrs.update({'class': 'form-control'})
             if field_name == 'customer':
                 field.queryset = models.Customer.objects.filter(consultant=request.user_obj)
             elif field_name == 'consultant':
-                # field.queryset = models.UserInfo.objects.filter(pk=request.user_obj.pk)
-                field.choices = ((request.user_obj.pk,request.user_obj.username),)
-        # customer = models.ModelChoiceField(
-        #     queryset = models.Customer.objects.filter(consultant=request.user_obj)
-        # )
-
-
-
+                field.choices = ((request.user_obj.pk, request.user_obj.username),)

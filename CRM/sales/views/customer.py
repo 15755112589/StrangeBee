@@ -221,3 +221,9 @@ class AddEditConsultView(View):
 def delete_consult_record(request, cid):
     models.ConsultRecord.objects.filter(pk=cid).update(delete_status=True)
     return redirect('consult_record')
+
+
+
+
+
+

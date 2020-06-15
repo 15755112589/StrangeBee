@@ -54,6 +54,7 @@
                     <th>性别</th>
                     <th>qq</th>
                     <th>报名状态</th>
+                    <th>跟踪记录</th>
                     <th>销售</th>
                     <th>操作</th>
                 </tr>
@@ -68,6 +69,9 @@
                         <td>{{ foo.get_sex_display }}</td>
                         <td>{{ foo.qq }}</td>
                         <td>{{ foo.status_show }}</td>
+                        <td>
+                            <a href="{% url 'consult_record' %}?cid={{ foo.pk }}">查看详情</a>
+                        </td>
                         <td>{{ foo.consultant|default:'暂无' }}</td>
                         <td>
 {#                            <a href="{% url 'edit_customers' foo.pk %}" class="fa fa-edit"></a>#}
