@@ -8,7 +8,7 @@ from django.urls import reverse
 from django.views import View
 
 from sales import models
-from sales.myforms import (CustomerForm, ConsultRecordForm)
+from sales.myforms import (CustomerForm, ConsultRecordForm, EnrollForm)
 from sales.utils.paging import PageInfo
 
 
@@ -97,7 +97,7 @@ class CustomerView(View):
         customers.update(consultant=None)
 
 
-# 添加和编辑客户
+# 添加和编辑客户信息
 def add_edit_customers(request, cid=None):
     """
     添加和编辑客户
@@ -187,6 +187,7 @@ class ConsultRecord(View):
         consults.update(delete_status=True)
 
 
+# 新增和编辑客户记录
 class AddEditConsultView(View):
 
     def get(self, request, cid=None):
@@ -218,12 +219,47 @@ class AddEditConsultView(View):
             return render(request, 'saleshtml/add_edit_consult.html', {'consult_form': consult_form})
 
 
+# 删除单条跟进记录
 def delete_consult_record(request, cid):
     models.ConsultRecord.objects.filter(pk=cid).update(delete_status=True)
     return redirect('consult_record')
 
 
+# 报名记录
+class EnrollmentView(View):
+
+    def get(self, request):
+        enrolls = models.Enrollment.objects.filter(customer__consultant=request.user_obj)
+        return render(request, 'saleshtml/enrollments.html', {'enrolls': enrolls})
 
 
+# 新增和编辑报名记录
+class AddEditEnrollView(View):
 
+    def get(self, request, cid=None):
 
+        """
+            添加报名记录和编辑报名记录
+            :param request:
+            :param cid:   客户记录id
+            :return:
+            """
+        label = '编辑报名记录' if cid else '添加报名记录'
+        enroll_obj = models.Enrollment.objects.filter(pk=cid).first()
+
+        if request.method == 'GET':
+            enroll_form = EnrollForm(request, instance=enroll_obj)
+            return render(request, 'saleshtml/add_edit_enroll.html', {'enroll_form': enroll_form, 'label': label})
+
+    def post(self, request, cid=None):
+        enroll_obj = models.Enrollment.objects.filter(pk=cid).first()
+        next_url = request.GET.get('next')
+        if not next_url:
+            next_url = reverse('consult_record')
+        enroll_form = EnrollForm(request, request.POST, instance=enroll_obj)
+        if enroll_form.is_valid():
+            enroll_form.save()
+
+            return redirect(next_url)
+        else:
+            return render(request, 'saleshtml/add_edit_enroll.html', {'enroll_form': enroll_form})

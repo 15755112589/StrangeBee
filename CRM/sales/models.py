@@ -114,14 +114,16 @@ class ClassList(models.Model):
     start_date = models.DateField("开班日期")
     graduate_date = models.DateField("结业日期", blank=True, null=True)  # 不一定什么时候结业，哈哈，所以可为空
 
-    teachers = models.ManyToManyField('UserInfo',
-                                      verbose_name="老师")  # 对了，还有一点，如果你用的django2版本的，那么外键字段都需要自行写上on_delete=models.CASCADE
+    teachers = models.ManyToManyField('UserInfo', verbose_name="老师")  # 对了，还有一点，如果你用的django2版本的，那么外键字段都需要自行写上on_delete=models.CASCADE
 
     class_type = models.CharField(choices=class_type_choices, max_length=64, verbose_name='班级及类型', blank=True,
                                   null=True)
 
     class Meta:
         unique_together = ("course", "semester", "campuses")
+
+    def __str__(self):
+        return '{}{}({})'.format(self.get_course_display(), self.semester, self.campuses)
 
 
 class Campuses(models.Model):

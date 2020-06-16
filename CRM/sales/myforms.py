@@ -127,3 +127,20 @@ class ConsultRecordForm(forms.ModelForm):
                 field.queryset = models.Customer.objects.filter(consultant=request.user_obj)
             elif field_name == 'consultant':
                 field.choices = ((request.user_obj.pk, request.user_obj.username),)
+
+
+class EnrollForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Enrollment
+        fields = '__all__'
+
+    def __init__(self, request, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            print(field_name, field)
+            field.widget.attrs.update({'class': 'form-control'})
+            if field_name == 'customer':
+                field.queryset = models.Customer.objects.filter(consultant=request.user_obj)
+
+
