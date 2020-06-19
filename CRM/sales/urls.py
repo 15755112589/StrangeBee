@@ -42,6 +42,8 @@ urlpatterns = [
     url(r'^add_enrollment/', customer.AddEditEnrollView.as_view(), name='add_enrollment'),
     # 编辑报名信息
     url(r'^edit_enrollment/(\d+)', customer.AddEditEnrollView.as_view(), name='edit_enrollment'),
+    # 删除单条客户记录
+    url(r'^delete_enroll_record/(\d+)', customer.delete_enroll_record, name='delete_enroll_record'),
 
 
 

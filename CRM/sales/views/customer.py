@@ -225,12 +225,64 @@ def delete_consult_record(request, cid):
     return redirect('consult_record')
 
 
-# 报名记录
+# 报名记录展示
 class EnrollmentView(View):
 
     def get(self, request):
-        enrolls = models.Enrollment.objects.filter(customer__consultant=request.user_obj)
-        return render(request, 'saleshtml/enrollments.html', {'enrolls': enrolls})
+
+        cid = request.GET.get('cid')
+
+        if cid:
+            # 当前登录用户的未删除的客户的报名记录
+            enroll_list = models.Enrollment.objects.filter().all()
+        else:
+            enroll_list = models.Enrollment.objects.filter(delete_status=False).all()
+        # 分页和搜索
+        get_data = request.GET.copy()  # 获取get请求提交的数据
+
+        # 当前页
+        current_page = request.GET.get('page')  # 当前页码
+        kw = request.GET.get('kw')  # 查询关键字
+        search_field = request.GET.get('search_field')
+        if kw:
+            kw = kw.strip()
+            q_obj = Q()
+            q_obj.children.append((search_field, kw))
+            enroll_list = enroll_list.filter(q_obj)
+        else:
+            enroll_list = enroll_list
+
+        try:
+            current_page = int(current_page)
+
+        except Exception as e:
+            current_page = 1
+
+        # 每页显示的个数
+        per_page = 10
+
+        start_show = (current_page - 1) * per_page
+        end_show = current_page * per_page
+        # 每页显示的数据
+        enroll_list = enroll_list.reverse()[start_show: end_show]
+        all_count = enroll_list.count()
+        page_info = PageInfo(current_page=current_page, all_count=all_count, per_page=per_page, get_data=get_data,
+                             base_url=request.path,
+                             show_page=5)
+        return render(request, 'saleshtml/enrollments.html',
+                      {'enrolls': enroll_list, 'page_info': page_info})
+
+    def post(self, request):
+        action = request.POST.get('action')
+        cids = request.POST.getlist('cids')
+        if hasattr(self, action):
+            enrolls = models.Enrollment.objects.filter(pk__in=cids)
+            getattr(self, action)(request, enrolls)
+            return redirect(request.path)
+
+    # 批量删除报名记录
+    def bulk_enroll_record(self, request, enrolls):
+        enrolls.update(delete_status=True)
 
 
 # 新增和编辑报名记录
@@ -246,20 +298,27 @@ class AddEditEnrollView(View):
             """
         label = '编辑报名记录' if cid else '添加报名记录'
         enroll_obj = models.Enrollment.objects.filter(pk=cid).first()
-
         if request.method == 'GET':
             enroll_form = EnrollForm(request, instance=enroll_obj)
             return render(request, 'saleshtml/add_edit_enroll.html', {'enroll_form': enroll_form, 'label': label})
 
     def post(self, request, cid=None):
-        enroll_obj = models.Enrollment.objects.filter(pk=cid).first()
+        enroll_obj = models.Enrollment.objects.filter().first()
         next_url = request.GET.get('next')
         if not next_url:
-            next_url = reverse('consult_record')
+            return redirect('enrollment')
         enroll_form = EnrollForm(request, request.POST, instance=enroll_obj)
+        print(enroll_form)
         if enroll_form.is_valid():
             enroll_form.save()
 
             return redirect(next_url)
+
         else:
             return render(request, 'saleshtml/add_edit_enroll.html', {'enroll_form': enroll_form})
+
+
+# 删除单条报名记录
+def delete_enroll_record(request, cid):
+    models.Enrollment.objects.filter(pk=cid).update(delete_status=True)
+    return redirect('enrollment')

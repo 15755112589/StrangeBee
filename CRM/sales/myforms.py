@@ -121,7 +121,7 @@ class ConsultRecordForm(forms.ModelForm):
     def __init__(self, request, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            print(field_name, field)
+            # print(field_name, field)
             field.widget.attrs.update({'class': 'form-control'})
             if field_name == 'customer':
                 field.queryset = models.Customer.objects.filter(consultant=request.user_obj)
@@ -138,9 +138,9 @@ class EnrollForm(forms.ModelForm):
     def __init__(self, request, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            print(field_name, field)
             field.widget.attrs.update({'class': 'form-control'})
             if field_name == 'customer':
                 field.queryset = models.Customer.objects.filter(consultant=request.user_obj)
-
+            elif field_name == 'contract_approved' or field_name == 'delete_status':
+                field.widget.attrs.update({'class': ''})
 

@@ -57,13 +57,12 @@
                         <td>{{ enroll.why_us }}</td>
                         <td>{{ enroll.contract_approved }}</td>
                         <td>{{ enroll.enrolled_date|date:'Y-m-d H:i:s' }}</td>
-                        <td>{{ enroll.customer.name }}</td>
+                        <td>{{ enroll.customer }}</td>
                         <td>{{ enroll.school }}</td>
                         <td>{{ enroll.enrolment_class }}</td>
                         <td>
-{#                            <a href="{% resole_url request 'edit_customers' foo.pk %}" class="fa fa-edit">编辑</a>#}
                             <a href="{% resole_url request 'edit_enrollment' enroll.pk %}" class="fa fa-edit">编辑</a>
-                            <a href="" class="fa fa-remove">删除</a>
+                            <a href="{% resole_url request 'delete_enroll_record' enroll.pk %}" class="fa fa-remove">删除</a>
                         </td>
                     </tr>
                 {% endfor %}
