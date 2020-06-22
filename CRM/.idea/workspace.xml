@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d720046-7bbc-4b63-aa18-4313793c6b7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sales/migrations/0003_auto_20200622_2339.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sales/migrations/0004_auto_20200622_2344.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sales/myforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sales/myforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sales/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sales/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sales/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sales/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales/views/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sales/views/customer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/saleshtml/enrollments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/saleshtml/enrollments.html" afterDir="false" />
     </list>
@@ -55,21 +56,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sales/views/customer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="313" column="10" selection-start-line="313" selection-start-column="10" selection-end-line="313" selection-end-column="10" />
+            <state relative-caret-position="584">
+              <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
               <folding>
                 <element signature="e#44#76#0" expanded="true" />
-                <element signature="e#6257#7314#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_edit_enroll.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -77,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales/myforms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
+            <state relative-caret-position="118">
+              <caret line="140" column="4" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
               <folding>
                 <element signature="e#46#55#0" expanded="true" />
               </folding>
@@ -89,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/saleshtml/enrollments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="64" column="91" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
+            <state relative-caret-position="441">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -98,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+            <state relative-caret-position="96">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding>
                 <element signature="e#47#79#0" expanded="true" />
               </folding>
@@ -110,10 +101,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1700">
-              <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+            <state relative-caret-position="45">
+              <caret line="153" column="7" lean-forward="true" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#3702#4685#0" />
+                <element signature="e#4722#4943#0" />
+                <element signature="e#4985#5452#0" />
               </folding>
             </state>
           </provider>
@@ -154,7 +148,6 @@
         <option value="$PROJECT_DIR$/templates/saleshtml/home.html" />
         <option value="$PROJECT_DIR$/app01/views.py" />
         <option value="$PROJECT_DIR$/insertdata.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/saleshtml/addcustomer.html" />
         <option value="$PROJECT_DIR$/sales/utils/paging.py" />
         <option value="$PROJECT_DIR$/templatetags/mytags.py" />
@@ -174,10 +167,11 @@
         <option value="$PROJECT_DIR$/CRM/settings.py" />
         <option value="$PROJECT_DIR$/templates/saleshtml/customers.html" />
         <option value="$PROJECT_DIR$/templates/starter.html" />
-        <option value="$PROJECT_DIR$/templates/saleshtml/add_edit_enroll.html" />
-        <option value="$PROJECT_DIR$/sales/models.py" />
         <option value="$PROJECT_DIR$/sales/urls.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/templates/saleshtml/add_edit_enroll.html" />
         <option value="$PROJECT_DIR$/sales/myforms.py" />
+        <option value="$PROJECT_DIR$/sales/models.py" />
         <option value="$PROJECT_DIR$/templates/saleshtml/enrollments.html" />
         <option value="$PROJECT_DIR$/sales/views/customer.py" />
       </list>
@@ -195,7 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,6 +232,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,7 +241,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/Django_projects/old_boy_python_stack__22-teaching_plan-master/teaching_plan/day74 课上笔记以及代码/代码/supercrm" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -430,7 +424,11 @@
       <workItem from="1592314833811" duration="7620000" />
       <workItem from="1592401690564" duration="8854000" />
       <workItem from="1592491192369" duration="7047000" />
-      <workItem from="1592586420410" duration="8805000" />
+      <workItem from="1592586420410" duration="8956000" />
+      <workItem from="1592745132214" duration="7532000" />
+      <workItem from="1592759961271" duration="1166000" />
+      <workItem from="1592833852172" duration="869000" />
+      <workItem from="1592840211915" duration="3035000" />
     </task>
     <task id="LOCAL-00001" summary="modify mysql ip">
       <created>1592113423924</created>
@@ -551,11 +549,18 @@
       <option name="project" value="LOCAL" />
       <updated>1592332345890</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add enroll_record">
+      <created>1592597316313</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1592597316313</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190568000" />
+    <option name="totallyTimeSpent" value="203321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,14 +573,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895614" visible="true" weight="0.1709531" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49895614" visible="true" weight="0.14372164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50104386" side_tool="true" weight="0.13505311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924126" visible="true" weight="0.35093698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924126" visible="true" weight="0.439523" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4463373" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -587,12 +591,12 @@
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32993197" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.5451448" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.40816328" />
-      <window_info anchor="bottom" id="manage.py@CRM" order="14" sideWeight="0.4969743" weight="0.28620103" />
+      <window_info anchor="bottom" id="manage.py@CRM" order="14" sideWeight="0.4969743" weight="0.39863715" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.123298034" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.19591528" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,9 +626,6 @@
     <SUITE FILE_PATH="coverage/CRM$mymiddleware.coverage" NAME="mymiddleware Coverage Results" MODIFIED="1591634475801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sales/utils" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7b49d358-bb2f-49c4-973c-2f25e39f5813/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b43bf6ad-2de2-4860-897c-fa86f39eafa5/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -817,22 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_edit_consult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b43bf6ad-2de2-4860-897c-fa86f39eafa5/schema/crm/table/sales_customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="0108a4e3-b21e-4d05-b107-ed68a6fa4fa6">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/saleshtml/edit_customers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -874,15 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b43bf6ad-2de2-4860-897c-fa86f39eafa5/schema/crm/table/sales_enrollment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ded7cba4-624a-4da9-9af3-725cad90b165">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -900,13 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sales/utils/paging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/saleshtml/consultrecord.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -914,57 +883,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://b43bf6ad-2de2-4860-897c-fa86f39eafa5/schema/crm/table/sales_customer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="a6659642-d9b4-4565-b5e1-3e8ca39872f2">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_edit_consult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/plugins/login/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_edit_enroll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sales/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1700">
-          <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+        <state relative-caret-position="45">
+          <caret line="153" column="7" lean-forward="true" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/enrollments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="64" column="91" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales/myforms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
-          <folding>
-            <element signature="e#46#55#0" expanded="true" />
+            <element signature="e#3702#4685#0" />
+            <element signature="e#4722#4943#0" />
+            <element signature="e#4985#5452#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sales/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+        <state relative-caret-position="96">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding>
             <element signature="e#47#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/saleshtml/add_edit_enroll.html">
+    <entry file="file://$PROJECT_DIR$/sales/utils/paging.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="-123">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/saleshtml/enrollments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b43bf6ad-2de2-4860-897c-fa86f39eafa5/schema/crm/table/sales_enrollment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="8be509cf-bd30-46ce-b2e5-0956c4816c35">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sales/myforms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="140" column="4" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
+          <folding>
+            <element signature="e#46#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sales/views/customer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="313" column="10" selection-start-line="313" selection-start-column="10" selection-end-line="313" selection-end-column="10" />
+        <state relative-caret-position="584">
+          <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
           <folding>
             <element signature="e#44#76#0" expanded="true" />
-            <element signature="e#6257#7314#0" />
           </folding>
         </state>
       </provider>

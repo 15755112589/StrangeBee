@@ -157,7 +157,7 @@ class Enrollment(models.Model):
     your_expectation = models.TextField("学完想达到的具体期望", max_length=1024, blank=True, null=True)
     # contract_agreed = models.BooleanField("我已认真阅读完培训协议并同意全部协议内容", default=False)
     contract_approved = models.BooleanField("审批通过", help_text="在审阅完学员的资料无误后勾选此项,合同即生效", default=False)
-    enrolled_date = models.DateTimeField(auto_now_add=True, verbose_name="报名日期")
+    enrolled_date = models.DateTimeField(auto_now=True, verbose_name="报名日期")
     memo = models.TextField('备注', blank=True, null=True)
     delete_status = models.BooleanField(verbose_name='删除状态', default=False)
     customer = models.ForeignKey('Customer', verbose_name='客户名称')
